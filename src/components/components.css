@@ -1,0 +1,178 @@
+.topbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    height: 8vh;
+    background: #165782;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: sans-serif;
+    color: white;
+    padding-left: 3%;
+    padding-right: 3%;
+    z-index: 10;
+}
+
+.topbarButtons {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.topbarButtonsCont {
+    display: flex;
+    justify-content: space-between;
+    width: 50%;
+}
+
+.topbarLogo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5vw;
+    font-weight: 600;
+}
+
+.topbarButton {
+    background: none;
+    border: none;
+    font-size: 1vw;
+    font-weight: 600;
+    color: white;
+    box-sizing: border-box;
+}
+.topbarButton.active{
+    border-bottom: 6px #BDE5F1 solid;
+    box-sizing: border-box;
+}
+
+.carousel-container{
+    max-height: 92vh;
+    box-sizing: border-box;
+}
+
+.gallery-item {
+    width: 100%;
+    position: relative;
+}
+
+.gallery-image {
+    width: 100%;
+}
+
+.gallery-image-cont {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+ul.custom-dot-list-style{
+    bottom: 2vh;
+}
+
+.gallery-label {
+    position: absolute;
+    bottom: 15vh;
+    left:10vw;
+    background: rgba(0, 0, 0, 0.47);
+    border-radius: 2vh;
+    width: 20%;
+    padding: 2vh;
+}
+
+.gallery-label-title {
+    color: white;
+    font-family: sans-serif;
+    font-weight: 600;
+    font-size: 1.3vw;
+    margin-bottom: 2vh;
+}
+
+.gallery-label-body {
+    color: white;
+    font-family: sans-serif;
+    font-size: 1vw;
+}
+
+.aboutPageIntro{
+    min-height: 80vh;
+    padding-left: 18%;
+    padding-right: 18%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: sans-serif;
+    color: black;
+}
+
+.aboutPageHeader {
+    font-size: 7vh;
+    text-align: center;
+    font-weight: 400;
+}
+
+.aboutPageSubHeader {
+    margin-top: 3vh;
+    font-size: 3vh;
+    text-align: center;
+    font-weight: 600;
+}
+
+.aboutPageIntroText {
+    margin-top: 8vh;
+    font-size: 2.5vh;
+    text-align: center;
+    font-weight: 400;
+}
+
+.aboutPageTile{
+    display: flex;
+    height: 80vh;
+    background: #165782;
+    color: white;
+    font-family: sans-serif;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 5%;
+    padding-right: 5%;
+    font-size: 1.5vw;
+}
+
+.aboutPageTile.reverse {
+    display: flex;
+    height: 80vh;
+    background: white;
+    color: black;
+    flex-direction: row-reverse;
+}
+
+.aboutPageContent{
+    width: 50%;
+}
+
+.aboutPageImgCont {
+    height: 55vh;
+    width: 55vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    border-radius: 2vh;
+}
+
+.aboutPageImg {
+    width: 100%;
+}
+
+.aboutPageTileTitle{
+    font-weight: 600;
+    font-size: 2vw;
+    margin-bottom: 3vh;
+}

@@ -1,0 +1,9 @@
+.page {
+    overflow: hidden;
+}
+
+.pageCont {
+    margin-top: 8vh;
+    height: 92vh;
+    overflow-y: scroll;
+}

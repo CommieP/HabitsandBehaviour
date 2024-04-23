@@ -1,0 +1,1 @@
+export const Pages = ["About", "Capstone Projects", "Research", "Experiments and Explorations", "People", "Contact"]
