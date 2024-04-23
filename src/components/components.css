@@ -46,12 +46,17 @@
     color: white;
     box-sizing: border-box;
 }
-.topbarButton.active{
+
+.topbarButton.active {
     border-bottom: 6px #BDE5F1 solid;
     box-sizing: border-box;
 }
 
-.carousel-container{
+.burgerMenuCont {
+    display: none;
+}
+
+.carousel-container {
     max-height: 92vh;
     box-sizing: border-box;
 }
@@ -72,14 +77,14 @@
     align-items: center;
 }
 
-ul.custom-dot-list-style{
+ul.custom-dot-list-style {
     bottom: 2vh;
 }
 
 .gallery-label {
     position: absolute;
     bottom: 15vh;
-    left:10vw;
+    left: 10vw;
     background: rgba(0, 0, 0, 0.47);
     border-radius: 2vh;
     width: 20%;
@@ -100,7 +105,7 @@ ul.custom-dot-list-style{
     font-size: 1vw;
 }
 
-.aboutPageIntro{
+.aboutPageIntro {
     min-height: 80vh;
     padding-left: 18%;
     padding-right: 18%;
@@ -132,7 +137,7 @@ ul.custom-dot-list-style{
     font-weight: 400;
 }
 
-.aboutPageTile{
+.aboutPageTile {
     display: flex;
     height: 80vh;
     background: #165782;
@@ -153,7 +158,7 @@ ul.custom-dot-list-style{
     flex-direction: row-reverse;
 }
 
-.aboutPageContent{
+.aboutPageContent {
     width: 50%;
 }
 
@@ -171,8 +176,405 @@ ul.custom-dot-list-style{
     width: 100%;
 }
 
-.aboutPageTileTitle{
+.aboutPageTileTitle {
     font-weight: 600;
     font-size: 2vw;
     margin-bottom: 3vh;
+}
+
+.tile {
+    min-width: 30%;
+    min-height: 30vh;
+    border-radius: 2vh;
+    background: #F5F7FB;
+    box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.25);
+    margin-left: 3vw;
+    margin-bottom: 3vw;
+    padding: 3vh;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.tileAccent {
+    position: absolute;
+    top: 0;
+    left: -1%;
+    min-height: 100%;
+    min-width: 1%;
+    border-radius: 5px;
+    background-color: #3080B5;
+}
+
+.tileCont {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-around;
+    justify-content: space-between;
+    padding-right: 3vw;
+    position: relative;
+}
+
+.tileTitle {
+    font-family: sans-serif;
+    font-size: 2vh;
+    font-weight: 600;
+}
+
+.tileSubTitle {
+    margin-top: 1vh;
+    font-family: sans-serif;
+    font-size: 2vh;
+    font-weight: 400;
+}
+
+.tileButton {
+    position: absolute;
+    bottom: 3vh;
+    left: 3vh;
+    font-size: 2vh;
+    font-family: sans-serif;
+    color: white;
+    background-color: #165782;
+    padding: 1%;
+    padding-left: 7%;
+    padding-right: 7%;
+    border: none;
+
+}
+
+.semSection {
+    height: auto;
+    width: 100%;
+    font-size: 2vh;
+    font-family: sans-serif;
+    color: black;
+    font-weight: 600;
+}
+
+.semTile {
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    padding-top: 2vh;
+    padding-bottom: 2vh;
+    padding-left: 1vw;
+    padding-right: 1vw;
+    border-top: 1px black solid;
+}
+
+.semContent {
+    display: none;
+}
+
+.semContent.expand {
+    display: block;
+    margin-top: 2vh;
+}
+
+.expandButton {
+    background-image: url("../../public/assets/images/expand.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-color: transparent;
+    border: none;
+    width: 2vh;
+    height: 2vh;
+}
+
+.expandButton.expand {
+    background-image: url("../../public/assets/images/minus.svg");
+}
+
+@media only screen and (max-width: 600px) {
+
+    .topbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+        height: 8vh;
+        background: #165782;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: sans-serif;
+        color: white;
+        padding-left: 3%;
+        padding-right: 3%;
+        z-index: 10;
+    }
+
+    .topbarButtons {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .topbarButtonsCont {
+        display: none;
+    }
+
+    .topbarButtonsCont.menuOpen {
+        position: absolute;
+        top: 8vh;
+        right: 0;
+        width: 100vw;
+        height: 92vh;
+        background-color: #165782;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+
+    .burgerMenuCont {
+        display: flex;
+        justify-items: center;
+        align-items: center;
+    }
+
+    .burgerMenu {
+        height: 3vh;
+        width: 3vh;
+        background-image: url("../../public/assets/images/menu.svg");
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-color: transparent;
+        border: none;
+    }
+
+    .burgerMenu.menuOpen {
+        background-image: url("../../public/assets/images/close.svg");
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-color: transparent;
+        border: none;
+    }
+
+    .topbarLogo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 2.5vh;
+        font-weight: 600;
+    }
+
+    .topbarButton {
+        background: none;
+        border: none;
+        margin-bottom: 2vh;
+        font-size: 3vh;
+        font-weight: 600;
+        color: white;
+        box-sizing: border-box;
+        border-bottom: 1px #BDE5F1 solid;
+        padding-bottom: 2vh;
+    }
+
+    .topbarButton.active {
+        border-bottom: 4px #BDE5F1 solid;
+        box-sizing: border-box;
+    }
+
+    .carousel-container {
+        height: 52vh;
+        box-sizing: border-box;
+    }
+
+    .gallery-item {
+        height: 100%;
+        position: relative;
+    }
+
+
+    .gallery-image-cont {
+        min-height: 100%;
+        width: 100vw;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .gallery-image {
+        width: 100%;
+    }
+
+    ul.custom-dot-list-style {
+        bottom: 2vh;
+    }
+
+    .gallery-label {
+        position: absolute;
+        bottom: 23vh;
+        left: 0px;
+        border-radius: 0px;
+        width: 100%;
+        background: rgba(0, 0, 0, 0.47);
+        padding: 2vh;
+        padding-bottom: 8vh;
+        padding-top: 3vh;
+        box-sizing: border-box;
+    }
+
+    .gallery-label-title {
+        color: white;
+        font-family: sans-serif;
+        font-weight: 600;
+        font-size: 3vh;
+        margin-bottom: 3vh;
+    }
+
+    .gallery-label-body {
+        color: white;
+        font-family: sans-serif;
+        font-size: 2vh;
+    }
+
+    .aboutPageIntro {
+        min-height: 60vh;
+        padding-left: 8%;
+        padding-right: 8%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        font-family: sans-serif;
+        color: black;
+    }
+
+    .aboutPageHeader {
+        font-size: 4vh;
+        text-align: center;
+        font-weight: 400;
+    }
+
+    .aboutPageSubHeader {
+        margin-top: 3vh;
+        font-size: 2.5vh;
+        text-align: center;
+        font-weight: 600;
+    }
+
+    .aboutPageIntroText {
+        margin-top: 6vh;
+        font-size: 2vh;
+        text-align: center;
+        font-weight: 400;
+    }
+
+    .aboutPageTile {
+        display: flex;
+        height: 80vh;
+        background: #165782;
+        color: white;
+        font-family: sans-serif;
+        align-items: center;
+        justify-content: space-between;
+        padding-left: 5%;
+        padding-right: 5%;
+        font-size: 2vh;
+        flex-direction: column-reverse;
+    }
+
+    .aboutPageTile.reverse {
+        display: flex;
+        height: 80vh;
+        background: white;
+        color: black;
+        flex-direction: column-reverse;
+    }
+
+    .aboutPageContent {
+        padding-top: 1vh;
+        width: 100%;
+        flex-grow: 1;
+    }
+
+    .aboutPageImgCont {
+        height: 50vh;
+        width: 100vw;
+        display: flex;
+        border-radius: 0px;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+    }
+
+    .aboutPageImg {
+        width: 100%;
+        border-radius: 0px;
+    }
+
+    .aboutPageTileTitle {
+        font-weight: 600;
+        font-size: 2.5vh;
+        text-align: center;
+        margin-top: 3vh;
+    }
+
+    .tile {
+        min-width: 94%;
+        min-height: 30vh;
+        border-radius: 2vh;
+        background: #F5F7FB;
+        box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.25);
+        margin-left: 3vw;
+        margin-bottom: 4vh;
+        padding: 3vh;
+        box-sizing: border-box;
+        position: relative;
+    }
+
+    .tileAccent {
+        position: absolute;
+        top: 0;
+        left: -1%;
+        min-height: 100%;
+        min-width: 1%;
+        border-radius: 5px;
+        background-color: #3080B5;
+    }
+
+    .tileCont {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-content: space-around;
+        justify-content: space-between;
+        padding-right: 3vw;
+        position: relative;
+    }
+
+    .tileTitle {
+        font-family: sans-serif;
+        font-size: 2vh;
+        font-weight: 600;
+    }
+
+    .tileSubTitle {
+        margin-top: 1vh;
+        font-family: sans-serif;
+        font-size: 2vh;
+        font-weight: 400;
+    }
+
+    .tileButton {
+        position: absolute;
+        bottom: 3vh;
+        left: 3vh;
+        font-size: 2vh;
+        font-family: sans-serif;
+        color: white;
+        background-color: #165782;
+        padding: 1%;
+        padding-left: 7%;
+        padding-right: 7%;
+        border: none;
+
+    }
+
 }
