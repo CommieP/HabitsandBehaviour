@@ -1,12 +1,16 @@
 import "../pages/pages.css"
 import { CapstoneData } from "../Data/CapstoneProjectsData"
 import TileContainer from "../components/TileContainer"
+import TopBar from "../components/TopBar"
 
 const CapstonePage = () => {
-    return(
+    return (
         <div className="page">
-            <div className="pageTitle">Capstone Projects</div>
-            <TileContainer data={CapstoneData}></TileContainer>
+            <TopBar></TopBar>
+            <div className="pageCont">
+                <div className="pageTitle">Capstone Projects</div>
+                <TileContainer data={CapstoneData}></TileContainer>
+            </div>
         </div>
     )
 }

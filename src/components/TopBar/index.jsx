@@ -3,20 +3,28 @@ import TopBarButton from "./TopBarButton";
 import TopBarLogo from "./TopBarLogo";
 import "../../components/components.css";
 import { Pages } from "../../Data/Pages";
+import { useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { topBarNavActions } from "../../store/reducers/topBarNavSlice";
 
-const TopBar = ({ onPageSelect }) => {
-    const [activeIndex, setActiveIndex] = useState(0);
+const TopBar = () => {
+    const activeIndex = useSelector(state => state.topBarNav.value);
+    console.log(activeIndex);
     const [menuOpen, setMenuOpen] = useState(false);
+    let navigate = useNavigate()
+    let dispatch = useDispatch();
 
     const handleClick = (index) => {
-        setActiveIndex(index);
-        onPageSelect(index);
         handleMenuOpen(!menuOpen);
+        dispatch(topBarNavActions.navigateTopBar(index))
+        navigate("/" + Pages[index].replace(/\s/g, '')); 
     };
 
     const handleMenuOpen = () => {
         setMenuOpen(!menuOpen)
     }
+
+    // onPa
 
     return (
         <div className="topbar">
