@@ -17,6 +17,10 @@ export const ResearchData = [
             {
                 title: "Lorem Ipsum",
                 author: "Lorem Ipsum"
+            },
+            {
+                title: "Lorem Ipsum 1",
+                author: "Lorem Ipsum 2"
             }
         ]
     },
@@ -61,5 +65,26 @@ export const ResearchData = [
                 author: "Lorem Ipsum"
             }
         ]
-    }
+    },
+    {
+        sem: "Even sem 2026-2027",
+        papers: [
+            {
+                title: "Lorem Ipsum",
+                author: "Lorem Ipsum"
+            },
+            {
+                title: "Lorem Ipsum",
+                author: "Lorem Ipsum"
+            },
+            {
+                title: "Lorem Ipsum",
+                author: "Lorem Ipsum"
+            },
+            {
+                title: "Lorem Ipsum",
+                author: "Lorem Ipsum"
+            }
+        ]
+    },
 ]
