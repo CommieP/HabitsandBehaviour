@@ -193,6 +193,7 @@ ul.custom-dot-list-style {
     padding: 3vh;
     box-sizing: border-box;
     position: relative;
+    justify-self: flex-start;
 }
 
 .tileAccent {
@@ -208,8 +209,7 @@ ul.custom-dot-list-style {
 .tileCont {
     display: flex;
     flex-wrap: wrap;
-    align-content: space-around;
-    justify-content: space-between;
+    justify-content: flex-start;
     padding-right: 3vw;
     position: relative;
 }

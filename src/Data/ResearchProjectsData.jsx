@@ -4,23 +4,28 @@ export const ResearchData = [
         papers: [
             {
                 title: "Lorem Ipsum",
-                author: "Lorem Ipsum"
+                author: "Lorem Ipsum",
+                url: "/assets/researchPapers/abhishek.pdf"
             },
             {
                 title: "Lorem Ipsum",
-                author: "Lorem Ipsum"
+                author: "Lorem Ipsum",
+                url: ""
             },
             {
                 title: "Lorem Ipsum",
-                author: "Lorem Ipsum"
+                author: "Lorem Ipsum",
+                url: ""
             },
             {
                 title: "Lorem Ipsum",
-                author: "Lorem Ipsum"
+                author: "Lorem Ipsum",
+                url: ""
             },
             {
                 title: "Lorem Ipsum 1",
-                author: "Lorem Ipsum 2"
+                author: "Lorem Ipsum 2",
+                url: ""
             }
         ]
     },
@@ -29,62 +34,24 @@ export const ResearchData = [
         papers: [
             {
                 title: "Lorem Ipsum",
-                author: "Lorem Ipsum"
+                author: "Lorem Ipsum",
+                url: ""
             },
             {
                 title: "Lorem Ipsum",
-                author: "Lorem Ipsum"
+                author: "Lorem Ipsum",
+                url: ""
             },
             {
                 title: "Lorem Ipsum",
-                author: "Lorem Ipsum"
+                author: "Lorem Ipsum",
+                url: ""
             },
             {
                 title: "Lorem Ipsum",
-                author: "Lorem Ipsum"
+                author: "Lorem Ipsum",
+                url: ""
             }
         ]
-    },
-    {
-        sem: "Odd sem 2023-2024",
-        papers: [
-            {
-                title: "Lorem Ipsum",
-                author: "Lorem Ipsum"
-            },
-            {
-                title: "Lorem Ipsum",
-                author: "Lorem Ipsum"
-            },
-            {
-                title: "Lorem Ipsum",
-                author: "Lorem Ipsum"
-            },
-            {
-                title: "Lorem Ipsum",
-                author: "Lorem Ipsum"
-            }
-        ]
-    },
-    {
-        sem: "Even sem 2026-2027",
-        papers: [
-            {
-                title: "Lorem Ipsum",
-                author: "Lorem Ipsum"
-            },
-            {
-                title: "Lorem Ipsum",
-                author: "Lorem Ipsum"
-            },
-            {
-                title: "Lorem Ipsum",
-                author: "Lorem Ipsum"
-            },
-            {
-                title: "Lorem Ipsum",
-                author: "Lorem Ipsum"
-            }
-        ]
-    },
+    }
 ]
