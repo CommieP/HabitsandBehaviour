@@ -3,7 +3,7 @@ export const AboutData = [
         title: "Interaction with VR",
         body: "In this experiment, participants engage with a virtual reality environment designed to simulate real-life scenarios. Their behavioral and emotional responses are observed to understand how immersive experiences influence perception and decision-making.",
         imgSrc: "./assets/images/intro1.jpeg"
-    }, 
+    },
     {
         title: "EEG Recordings of Human Action",
         body: "Under the Transdisciplinary Research (TDR) Lab, neuroscience meets design thinking. Here, an experiment records EEG signals from participants as they perform tasks and explore neural dynamics underlying habit and behavior formation. EEG Signal charts are analyzed to identify specific brainwave patterns and their changes during task engagement, providing insights into how brain activity correlated with behavioral responses and cognitive processes.",
