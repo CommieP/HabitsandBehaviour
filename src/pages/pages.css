@@ -1,19 +1,6 @@
-.page {
-    overflow: hidden;
-}
-
-.pageCont {
-    margin-top: 8vh;
-    height: 92vh;
-    overflow-y: scroll;
-}
-
-.pageTitle {
-    text-decoration: underline;
-    text-align: center;
-    padding: 5vh;
-    font-size: 3vh;
-    font-family: sans-serif;
-    font-weight: 600;
-    margin: 0px;
-}
+html { scroll-padding-top: calc(var(--header-height) + 1rem); }
+.pageCont { padding-top: var(--header-height); min-height: 100vh; }
+.pageCont:focus { outline: none; }
+.pageTitle { text-align: center; padding: 3rem 1rem; font-size: clamp(1.8rem, 3vw, 2.5rem); line-height: 1.25; }
+.statusPage { max-width: 44rem; margin: 0 auto; padding: 1rem 1.5rem 5rem; text-align: center; }
+.statusPage .tileButton { margin: 2rem auto 0; }

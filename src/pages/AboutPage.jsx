@@ -1,22 +1,11 @@
-import { AboutPageIntro, AboutPageTile } from "../components/AboutPageTiles"
-import Gallery from "../components/Gallery"
-import "../pages/pages.css"
-import { AboutData } from "../Data/AboutData"
-import TopBar from "../components/TopBar"
+import { AboutPageIntro, AboutPageTile } from "../components/AboutPageTiles";
+import Gallery from "../components/Gallery";
+import { AboutData } from "../Data/AboutData";
 
-const AboutPage = () => {
-    return (
-        <div className="page">
-            <TopBar></TopBar>
-            <div className="pageCont">
-                <Gallery></Gallery>
-                <AboutPageIntro></AboutPageIntro>
-                {AboutData.map((item, index) => (
-                    <AboutPageTile reverse={index % 2 === 1 ? true : false} data={item} key={index}></AboutPageTile>
-                ))}
-            </div>
-        </div>
-    )
+export default function AboutPage() {
+    return <>
+        <Gallery />
+        <AboutPageIntro />
+        {AboutData.map((item, index) => <AboutPageTile reverse={index % 2 === 1} data={item} key={item.title} />)}
+    </>;
 }
-
-export default AboutPage

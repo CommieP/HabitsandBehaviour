@@ -1,15 +1,15 @@
-import "../../components/components.css";
+import PropTypes from "prop-types";
 import Tile2 from "./Tile2";
 
-const ExpCont = ({ data }) => {
+export default function ExpCont({ data, headingLevel = 2, actionLabel = "View", className = "" }) {
+    return <div className={`tileCont ${className}`}>
+        {data.map(item => <Tile2 {...item} headingLevel={headingLevel} actionLabel={actionLabel} key={item.url ?? item.title} />)}
+    </div>;
+}
 
-    return (
-        <div className="tileCont">
-            {data.map((item, index) => (
-                <Tile2 title={item.title} subTitle={item.subTitle} src = {item.src} key={index}></Tile2>
-            ))}
-        </div>
-    );
+ExpCont.propTypes = {
+    data: PropTypes.arrayOf(PropTypes.shape(Tile2.propTypes)).isRequired,
+    headingLevel: PropTypes.oneOf([2, 3]),
+    actionLabel: PropTypes.string,
+    className: PropTypes.string,
 };
-
-export default ExpCont;

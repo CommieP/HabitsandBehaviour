@@ -1,53 +1,38 @@
-import React, { useState } from "react";
+import { useRef, useState } from "react";
 import TopBarButton from "./TopBarButton";
 import TopBarLogo from "./TopBarLogo";
-import "../../components/components.css";
 import { Pages } from "../../Data/Pages";
-import { useNavigate } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
-import { topBarNavActions } from "../../store/reducers/topBarNavSlice";
 
-const TopBar = () => {
-    const activeIndex = useSelector(state => state.topBarNav.value);
-    console.log(activeIndex);
+export default function TopBar() {
     const [menuOpen, setMenuOpen] = useState(false);
-    let navigate = useNavigate()
-    let dispatch = useDispatch();
+    const menuButton = useRef(null);
+    const closeMenu = () => setMenuOpen(false);
 
-    const handleClick = (index) => {
-        handleMenuOpen(!menuOpen);
-        dispatch(topBarNavActions.navigateTopBar(index))
-        navigate("/" + Pages[index].replace(/\s/g, '')); 
+    const handleKeyDown = event => {
+        if (event.key === "Escape" && menuOpen) {
+            closeMenu();
+            menuButton.current?.focus();
+        }
     };
 
-    const handleMenuOpen = () => {
-        setMenuOpen(!menuOpen)
-    }
-
-    // onPa
-
     return (
-        <div className="topbar">
-            <div className="topbarButtons">
-                <TopBarLogo onClick={() => handleClick(0)} /> {/* Corrected onClick prop */}
-                <div className={`topbarButtonsCont ${menuOpen ? 'menuOpen' : ''}`}>
-                    {Pages.map((item, index) => (
-                        index !== 0 && (
-                            <TopBarButton
-                                key={index}
-                                text={item}
-                                active={index === activeIndex}
-                                onClick={() => handleClick(index)}
-                            />
-                        )
+        <header className="topbar" onKeyDown={handleKeyDown}>
+            <div className="topbarButtons" onBlur={event => {
+                if (!event.currentTarget.contains(event.relatedTarget)) closeMenu();
+            }}>
+                <TopBarLogo onClick={closeMenu} />
+                <button ref={menuButton} className={`burgerMenu ${menuOpen ? "menuOpen" : ""}`}
+                    type="button" aria-label={menuOpen ? "Close navigation menu" : "Open navigation menu"}
+                    aria-expanded={menuOpen} aria-controls="primary-navigation"
+                    onClick={() => setMenuOpen(open => !open)}>
+                    <span aria-hidden="true">{menuOpen ? "×" : "☰"}</span>
+                </button>
+                <nav id="primary-navigation" aria-label="Main navigation" className={`topbarButtonsCont ${menuOpen ? "menuOpen" : ""}`}>
+                    {Pages.slice(1).map(page => (
+                        <TopBarButton key={page.path} text={page.title} to={page.path} onClick={closeMenu} />
                     ))}
-                </div>
-                <div className="burgerMenuCont">
-                    <button className={`burgerMenu ${menuOpen ? 'menuOpen' : ''}`} onClick={() => handleMenuOpen()}></button>
-                </div>
+                </nav>
             </div>
-        </div>
+        </header>
     );
-};
-
-export default TopBar;
+}

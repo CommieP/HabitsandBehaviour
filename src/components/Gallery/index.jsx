@@ -1,63 +1,27 @@
-import React from "react";
-import Carousel from "react-multi-carousel";
-import "react-multi-carousel/lib/styles.css"; // Import carousel styles
-import "../../components/components.css";
-import { GalleryData } from "../../Data/GalleryData"
+import CarouselModule from "react-multi-carousel";
+import "react-multi-carousel/lib/styles.css";
+import { GalleryData } from "../../Data/GalleryData";
+import { AboutData } from "../../Data/AboutData";
+import ResponsiveImage from "../ResponsiveImage";
 
-const responsive = {
-    superLargeDesktop: {
-        breakpoint: { max: 4000, min: 3000 },
-        items: 1
-    },
-    desktop: {
-        breakpoint: { max: 3000, min: 1024 },
-        items: 1
-    },
-    tablet: {
-        breakpoint: { max: 1024, min: 464 },
-        items: 1
-    },
-    mobile: {
-        breakpoint: { max: 464, min: 0 },
-        items: 1
-    }
-};
+const responsive = { all: { breakpoint: { max: 100000, min: 0 }, items: 1 } };
+// This CommonJS package exposes its default differently in Vite's production build.
+const Carousel = CarouselModule.default ?? CarouselModule;
 
-const Gallery = () => {
-    console.log(GalleryData);
-    return (
-        <Carousel
-            swipeable={true}
-            draggable={false}
-            showDots={true}
-            responsive={responsive}
-            infinite={true}
-            autoPlaySpeed={1000}
-            keyBoardControl={true}
-            customTransition="all .5"
-            transitionDuration={500}
-            containerClass="carousel-container"
-            removeArrowOnDeviceType={["tablet", "mobile"]}
-            dotListClass="custom-dot-list-style"
-            itemClass="gallery-item"
-        >
-            {GalleryData.map((item, index) => (
-                <div key={index}>
-                    <div className="gallery-label">
-                        <div className="gallery-label-title">
-                            {item.title}
-                        </div>
-                        <div className="gallery-label-body">
-                            {item.body}
-                        </div>
-                    </div>
-                    <div className="gallery-image-cont">
-                        <img src={item.imgSrc} alt="Item 1" className="gallery-image" />
-                    </div>
+export default function Gallery() {
+    return <section className="gallery" aria-label="Lab gallery" aria-roledescription="carousel">
+        <Carousel swipeable draggable={false} showDots responsive={responsive} infinite
+            keyBoardControl={false} customTransition="transform 400ms ease" transitionDuration={400}
+            containerClass="carousel-container" dotListClass="custom-dot-list-style" itemClass="gallery-item">
+            {GalleryData.map((item, index) => <div className="gallery-slide" key={item.imgSrc}>
+                <div className="gallery-image-cont">
+                    <ResponsiveImage src={item.imgSrc} alt={AboutData[index].title} className="gallery-image" sizes="100vw" eager={index === 0} />
                 </div>
-            ))}
+                <div className="gallery-label">
+                    <p className="gallery-label-title">{item.title}</p>
+                    <p className="gallery-label-body">{item.body}</p>
+                </div>
+            </div>)}
         </Carousel>
-    );
-};
-
-export default Gallery;
+    </section>;
+}

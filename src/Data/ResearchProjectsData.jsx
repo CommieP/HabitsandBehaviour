@@ -16,17 +16,17 @@ export const ResearchData = [
             {
                 title: "Interventions in the artisanal process",
                 author: "Aniket Patil, Shreyas Desai",
-                url: "/assets/researchPapers/Aniket Patil and Shreyas Desai.pdf"
+                url: "/assets/researchPapers/Aniket Patil And Shreyas Desai .pdf"
             },
             {
                 title: "Impact of Instagram Reels on the attention span of creative and analytic thinkers",
                 author: "HS Varshaa, Shreya K",
-                url: "/assets/researchPapers/HS Varshaa and Shreya K.pdf"
+                url: "/assets/researchPapers/HS Varshaa and Shreya K .pdf"
             },
             {
                 title: "Understanding The Effect Of Different Audio Stimuli While Performing Some Logical and Creative Mental Tasks",
                 author: "Nishtha Rikhi, Samanvay Sahani",
-                url: "/assets/researchPapers/Nishtha Rikhi and Samanvay Sahani.pdf"
+                url: "/assets/researchPapers/Nishtha Rikhi and Samanvay Sahani .pdf"
             },
             {
                 title: "Does the change in tempo affect the attention span?",

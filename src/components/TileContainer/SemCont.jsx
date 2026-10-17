@@ -1,28 +1,17 @@
-import { useState } from "react"
-import TileContainer from "."
+import PropTypes from "prop-types";
+import TileContainer from ".";
+import { paperType } from "../../types";
 
-const SemCont = ({ data }) => {
-    const [open, setOpen] = useState(false);
-
-    const handleOpen = () => {
-        setOpen(!open);
-    }
-
+export default function SemCont({ data }) {
     return (
-        <div className="semSection">
-            <div className="semTile">
-                <div className="semName">
-                    {data.sem}
-                </div>
-                <div className="semButtonCont">
-                    <button className={`expandButton ${open ? 'expand' : ''}`} onClick={() => handleOpen()}></button>
-                </div>
-            </div>
-            <div className={`semContent ${open ? 'expand' : ''}`}>
-                <TileContainer data={data.papers}></TileContainer>
-            </div>
-        </div>
-    )
+        <details className="semSection">
+            <summary className="semTile">
+                <h2 className="semName">{data.sem}</h2>
+                <span className="expandButton" aria-hidden="true" />
+            </summary>
+            <div className="semContent"><TileContainer data={data.papers} headingLevel={3} /></div>
+        </details>
+    );
 }
 
-export default SemCont
+SemCont.propTypes = { data: PropTypes.shape({ sem: PropTypes.string.isRequired, papers: PropTypes.arrayOf(paperType).isRequired }).isRequired };
